@@ -1,2 +1,15 @@
 <h1>MatchDates#index</h1>
-<p>Find me in app/views/match_dates/index.html.erb</p>
+<table>
+  <tr>
+    <th>Date Of Match</th>
+    <th>Temperature</th>
+    <th></th>
+  </tr>
+
+  <% @matchdates.each do |matchdate| %>
+    <tr>
+      <td><%= matchdate.Date %></td>
+      <td><%= matchdate.Temperature %></td>
+    </tr>
+  <% end %>
+</table>

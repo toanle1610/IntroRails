@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'match_dates/index'
+  get '/matchdates', to: 'match_dates#index'
   get 'match_dates/show'
   get 'match_dates/new'
   get 'match_dates/edit'
