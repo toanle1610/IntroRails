@@ -1,2 +1,24 @@
-<h1>Matchs#index</h1>
-<p>Find me in app/views/matchs/index.html.erb</p>
+<h1>Matches</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Home Team</th>
+	  <th>Away Team</th>
+    <th>Home Goal</th>
+    <th>Away Goal</th>
+    <th>Referee</th>
+  </tr>
+
+  <% @matches.each do |match| %>
+    <tr>
+      <td><%= match.Date %></td>
+      <td><%= match.HomeTeam %></td>
+      <td><%= match.AwayTeam %></td>
+      <td><%= match.HomeGoal %></td>
+      <td><%= match.AwayGoal %></td>
+      <td><%= match.referee.RefereeName %></td>
+
+    </tr>
+  <% end %>
+</table>
