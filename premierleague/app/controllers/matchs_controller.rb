@@ -6,7 +6,7 @@ class MatchsController < ApplicationController
   end
 
   def show
-    @match = Match.find(params[:refereeId])
+
   end
 
   def new; end
