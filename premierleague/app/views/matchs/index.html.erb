@@ -17,7 +17,7 @@
       <td><%= match.AwayTeam %></td>
       <td><%= match.HomeGoal %></td>
       <td><%= match.AwayGoal %></td>
-      <td><%= match.referee.RefereeName %></td>
+      <td><%= link_to match.referee.RefereeName, referees_show_url(match.referee.RefereeId) %></td>
 
     </tr>
   <% end %>
