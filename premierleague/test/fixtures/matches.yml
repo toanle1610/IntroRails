@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  MatchId: 1
+  HomeTeamId: 1
+  AwayTeamId: 1
+  HomeGoal: 1
+  AwayGoal: 1
+
+two:
+  MatchId: 1
+  HomeTeamId: 1
+  AwayTeamId: 1
+  HomeGoal: 1
+  AwayGoal: 1

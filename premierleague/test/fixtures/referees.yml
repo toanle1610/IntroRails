@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  RefereeId: 1
+  MatchId: 1
+  RefereeName: MyString
+
+two:
+  RefereeId: 1
+  MatchId: 1
+  RefereeName: MyString

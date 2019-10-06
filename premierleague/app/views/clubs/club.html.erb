@@ -1,0 +1,19 @@
+<h1>Clubs#club</h1>
+
+<table>
+  <tr>
+    <th>Position</th>
+    <th>Image</th>
+	  <th>Club</th>
+    <th></th>
+  </tr>
+  <% i = 1 %>
+  <% @clubs.each do |club| %>
+    <tr>
+      <td><%= i %></td>
+      <td><%= image_tag(club.ClubName + ".jpg") %></td>
+      <td><%= link_to club.ClubName, clubs_show_url(club.ClubName) %></td>
+    </tr>
+    <% i += 1 %>
+  <% end %>
+</table>

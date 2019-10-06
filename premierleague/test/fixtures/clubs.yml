@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Id: 1
+  ClubName: MyString
+  Played: 1
+  Won: 1
+  Drawn: 1
+  Lost: MyString
+  integer: MyString
+  GoalFor: 1
+  GoalAgainst: 1
+  GoalDifference: 1
+  Point: 1
+
+two:
+  Id: 1
+  ClubName: MyString
+  Played: 1
+  Won: 1
+  Drawn: 1
+  Lost: MyString
+  integer: MyString
+  GoalFor: 1
+  GoalAgainst: 1
+  GoalDifference: 1
+  Point: 1
