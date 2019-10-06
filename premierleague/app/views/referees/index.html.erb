@@ -1,2 +1,17 @@
 <h1>Referees#index</h1>
-<p>Find me in app/views/referees/index.html.erb</p>
+<table>
+  <tr>
+    <th>Referee Id</th>
+    <th>Name</th>
+	  <th>Age</th>
+    <th></th>
+  </tr>
+
+  <% @referees.each do |referee| %>
+    <tr>
+      <td><%= referee.RefereeId %></td>
+      <td><%= referee.RefereeName %></td>
+      <td><%= referee.Age %></td>
+    </tr>
+  <% end %>
+</table>

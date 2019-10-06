@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get '/referees', to: 'referees#index'
   get '/referees/:refereeId', to: 'referees#show', as: '/referees/show'
-  get 'referees/show'
   get 'referees/new'
   get 'referees/edit'
   get '/matches', to: 'matchs#index'
