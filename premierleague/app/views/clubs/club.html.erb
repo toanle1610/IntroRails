@@ -31,37 +31,27 @@
 <h1>Clubs</h1>
 
 <nav class="float-right mt-2">
-    <ul class="pagination pagination-sm">
-      <% if @page.to_i == 1%>
-      <li class="page-item active">
-        <a remote="false" class="page-link">1</a>
-      </li>
-      <% else %>
-      <li class="page-item">
-        <a rel="next" class="page-link" href="/clubs?page=1">1</a>
-      </li>
-      <% end %>
+  <ul class="pagination pagination-sm">
 
-      <% if @page.to_i == 2%>
-      <li class="page-item active">
-        <a remote="false" class="page-link">2</a>
-      </li>
-      <% else %>
-      <li class="page-item">
-        <a rel="next" class="page-link" href="/clubs?page=2">2</a>
-      </li>
-      <% end %>
+    <li class="page-item">
+      <a class="page-link" href="/clubs">First</a>
+    </li>
 
-      <% if @page.to_i == 3%>
+    <% for i in 1..3 do %>
+      <% if @page.to_i == i%>
       <li class="page-item active">
-        <a remote="false" class="page-link">3</a>
+        <a remote="false" class="page-link"><%= i %></a>
       </li>
       <% else %>
       <li class="page-item">
-        <a rel="next" class="page-link" href="/clubs?page=3">3</a>
+        <a rel="next" class="page-link" href="/clubs?page=<%= i %>"><%= i %></a>
       </li>
       <% end %>
-    </ul>
+    <% end %>
+    <li class="page-item">
+      <a class="page-link" href="/clubs?page=3">Last</a>
+    </li>
+  </ul>
 </nav>
 <table class="table">
   <tr>

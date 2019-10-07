@@ -3,6 +3,9 @@
 class MatchDatesController < ApplicationController
   def index
     @matchdates = MatchDate.all
+
+    @page = params[:page]
+    @page = 1 if @page.nil?
   end
 
   def show
