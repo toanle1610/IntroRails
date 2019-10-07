@@ -1,19 +1,97 @@
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="/">Premier League 2018 - 2019</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Clubs</a>
+      </li>
+      <li class="nav-item " "="">
+        <a class="nav-link" href="/matches">Matches</a>
+      </li>
+      <li class="nav-item " "="">
+        <a class="nav-link" href="/referees">Referees</a>
+      </li>
+      <li class="nav-item " "="">
+        <a class="nav-link" href="/matchdates">Match Dates</a>
+      </li>
+    </ul>
+    <form class="form-inline mt-2 mt-md-0" action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+      <input type="text" name="q" id="q" class="form-control mr-sm-2" placeholder="Club Search">
+      <select name="category" id="category" class="form-control mr-sm-2"><option value="0">All</option>
+        <option value="46">Abstract Strategy</option>
+      <input type="submit" name="commit" value="Search" class="btn btn-outline-success my-2 my-sm-0" data-disable-with="Search">
+    </form>
+  </div>
+</nav>
+
 <h1>Clubs</h1>
 
-<table>
+<nav class="float-right mt-2">
+    <ul class="pagination pagination-sm">
+      <% if @page.to_i == 1%>
+      <li class="page-item active">
+        <a remote="false" class="page-link">1</a>
+      </li>
+      <% else %>
+      <li class="page-item">
+        <a rel="next" class="page-link" href="/clubs?page=1">1</a>
+      </li>
+      <% end %>
+
+      <% if @page.to_i == 2%>
+      <li class="page-item active">
+        <a remote="false" class="page-link">2</a>
+      </li>
+      <% else %>
+      <li class="page-item">
+        <a rel="next" class="page-link" href="/clubs?page=2">2</a>
+      </li>
+      <% end %>
+
+      <% if @page.to_i == 3%>
+      <li class="page-item active">
+        <a remote="false" class="page-link">3</a>
+      </li>
+      <% else %>
+      <li class="page-item">
+        <a rel="next" class="page-link" href="/clubs?page=3">3</a>
+      </li>
+      <% end %>
+    </ul>
+</nav>
+<table class="table">
   <tr>
     <th>Position</th>
     <th>Image</th>
 	  <th>Club</th>
     <th></th>
   </tr>
-  <% i = 1 %>
+  <%
+    temp = 1
+    if @page.to_i == 1
+      i = 1
+    else
+      i = (@page.to_i - 1) * 7 + 1
+    end
+  %>
   <% @clubs.each do |club| %>
-    <tr>
-      <td><%= i %></td>
-      <td><%= image_tag(club.ClubName + ".jpg") %></td>
-      <td><%= link_to club.ClubName, clubs_show_url(club.ClubName) %></td>
-    </tr>
-    <% i += 1 %>
+    <% if temp >= i and temp < (i + 7) %>
+      <tr>
+        <td><%= temp %></td>
+        <td><%= image_tag(club.ClubName + ".jpg") %></td>
+        <td><%= link_to club.ClubName, clubs_show_url(club.ClubName) %></td>
+      </tr>
+    <% end %>
+
+    <% if temp == (i + 7)
+        break
+      else
+        temp += 1
+      end %>
+
   <% end %>
 </table>
