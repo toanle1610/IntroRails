@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'referees/new'
   get 'referees/edit'
   get '/matches', to: 'matchs#index'
-  get 'matchs/show'
+  get '/search', to: 'matchs#show'
   get 'matchs/new'
   get 'matchs/edit'
   get '/clubs', to: 'clubs#club'

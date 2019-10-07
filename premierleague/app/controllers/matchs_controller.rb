@@ -8,7 +8,10 @@ class MatchsController < ApplicationController
     @page = 1 if @page.nil?
   end
 
-  def show; end
+  def show
+    @clubsearch = params[:q]
+    @referee = params[:referee]
+  end
 
   def new; end
 
