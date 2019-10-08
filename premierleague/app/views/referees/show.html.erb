@@ -1,6 +1,6 @@
 <h1>Referees</h1>
 
-<table>
+<table class="table">
   <tr>
     <th>Referee Id</th>
     <th>Name</th>
@@ -11,5 +11,6 @@
     <td><%= @referee.refereeid %></td>
     <td><%= @referee.RefereeName %></td>
     <td><%= @referee.Age %></td>
+    <td><%= link_to "Show Matches", "/referees/matches/#{@referee.refereeid}", class: 'btn btn-outline-success' %></td>
   </tr>
 </table>

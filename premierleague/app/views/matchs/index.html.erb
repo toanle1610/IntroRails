@@ -50,8 +50,8 @@
     <% if temp >= i and temp < (i + 38) %>
       <tr>
         <td><%= match.match_date_id %></td>
-        <td><%= match.HomeTeam %></td>
-        <td><%= match.AwayTeam %></td>
+        <td><%= link_to match.HomeTeam, clubs_show_url(match.HomeTeam)%></td>
+        <td><%= link_to match.AwayTeam, clubs_show_url(match.HomeTeam)%></td>
         <td><%= match.HomeGoal %></td>
         <td><%= match.AwayGoal %></td>
         <td><%= link_to match.referee.RefereeName, referees_show_url(match.referee.refereeid) %></td>
