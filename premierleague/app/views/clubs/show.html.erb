@@ -1,14 +1,16 @@
-<div>
-  <%= image_tag(@club.ClubName + ".jpg") %>
-</div>
-<div>
-  <h2> <%= @club.ClubName %> </h2>
-  <p><strong> Played: </strong> <%= @club.Played %> </p>
-  <p><strong> Won: </strong> <%= @club.Won %> </p>
-  <p><strong> Drawn: </strong> <%= @club.Drawn %> </p>
-  <p><strong> Lost: </strong> <%= @club.Lost %> </p>
-  <p><strong> Goal For: </strong> <%= @club.GoalFor %> </p>
-  <p><strong> Goal Against: </strong> <%= @club.GoalAgainst %> </p>
-  <p><strong> Goal Difference: </strong> <%= @club.GoalDifference %> </p>
-  <p><strong> Point: </strong> <%= @club.Point %> </p>
+<div class="row">
+  <div class="col-12 col-sm-6">
+    <%= image_tag(@club.ClubName + ".jpg", class: 'rounded mx-auto d-block', size: '300x300') %>
+  </div>
+  <div class="col">
+    <h2 class="mb-3"> <%= @club.ClubName %> </h2>
+    <p><strong> Played: </strong> <%= @club.Played %> </p>
+    <p><strong> Won: </strong> <%= @club.Won %> </p>
+    <p><strong> Drawn: </strong> <%= @club.Drawn %> </p>
+    <p><strong> Lost: </strong> <%= @club.Lost %> </p>
+    <p><strong> Goal For: </strong> <%= @club.GoalFor %> </p>
+    <p><strong> Goal Against: </strong> <%= @club.GoalAgainst %> </p>
+    <p><strong> Goal Difference: </strong> <%= @club.GoalDifference %> </p>
+    <p><strong> Point: </strong> <%= @club.Point %> </p>
+  </div>
 </div>
