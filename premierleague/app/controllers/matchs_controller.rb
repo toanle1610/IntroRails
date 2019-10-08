@@ -10,11 +10,10 @@ class MatchsController < ApplicationController
 
   def show
     @clubsearch = params[:q]
-    @referee = params[:referee]
     @count = 0
     @searchmatches = nil
 
-    if !@clubsearch.empty? && (@referee != 0)
+    if !@clubsearch.empty?
       @searchmatches = Match.where('HomeTeam like ? Or AwayTeam like ?',
                                    "%#{@clubsearch}%", "%#{@clubsearch}%")
       @count = @searchmatches.count

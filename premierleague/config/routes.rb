@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'match_dates/edit'
   get '/referees', to: 'referees#index'
   get '/referees/:refereeId', to: 'referees#show', as: '/referees/show'
+  get '/referees/matches/:refereeId', to: 'referees#refereematch'
   get 'referees/new'
   get 'referees/edit'
   get '/matches', to: 'matchs#index'

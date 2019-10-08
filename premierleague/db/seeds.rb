@@ -43,7 +43,7 @@ hash_content_match.each do |match|
   if new_referee.empty?
 
     Referee.create(
-      RefereeId: refereeId,
+      refereeid: refereeId,
       RefereeName: match['Referee'],
       Age: Faker::Number.between(from: 22, to: 50)
     )
@@ -66,7 +66,7 @@ hash_content_match.each do |match|
     HomeGoal: match['FTHG'].to_i,
     AwayGoal: match['FTAG'].to_i,
     Date: match['Date'],
-    RefereeId: Referee.where('RefereeName = ?', match['Referee']).first.RefereeId
+    referee_id: Referee.where('RefereeName = ?', match['Referee']).first.refereeid
   )
   matchId += 1
 end

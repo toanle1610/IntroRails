@@ -9,6 +9,11 @@ class RefereesController < ApplicationController
     @referee = Referee.find(params[:refereeId])
   end
 
+  def refereematch
+    @referee = Referee.find(params[:refereeId])
+    @matches = @referee.matchs
+  end
+
   def new; end
 
   def edit; end

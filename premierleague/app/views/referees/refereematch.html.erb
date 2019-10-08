@@ -1,8 +1,4 @@
-<h1>Search Results</h1>
-
-<p>Your search for "<%= @clubsearch %>" found <%= @count %> matches </p>
-
-<% if @count > 0 %>
+<h1> Referee <%= @referee.RefereeName %> </h1>
 
 <table class="table">
   <thead class="thead-light">
@@ -16,7 +12,8 @@
     </tr>
   </thead>
 
-  <% @searchmatches.each do |match| %>
+  <% @matches.each do |match| %>
+
     <tr>
       <td><%= match.Date %></td>
       <td><%= match.HomeTeam %></td>
@@ -26,5 +23,4 @@
       <td><%= link_to match.referee.RefereeName, referees_show_url(match.referee.refereeid) %></td>
     </tr>
   <% end %>
-<% end %>
 </table>

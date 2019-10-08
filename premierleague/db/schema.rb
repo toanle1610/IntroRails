@@ -40,13 +40,13 @@ ActiveRecord::Schema.define(version: 2019_10_01_230022) do
     t.integer "HomeGoal"
     t.integer "AwayGoal"
     t.datetime "Date"
-    t.integer "RefereeId"
+    t.integer "referee_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "referees", id: false, force: :cascade do |t|
-    t.integer "RefereeId"
+    t.integer "refereeid"
     t.string "RefereeName"
     t.integer "Age"
     t.datetime "created_at", precision: 6, null: false
