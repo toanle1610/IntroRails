@@ -7,4 +7,6 @@ class Match < ApplicationRecord
   belongs_to :referee, foreign_key: 'referee_id'
   belongs_to :club, foreign_key: 'HomeTeam'
   belongs_to :club, foreign_key: 'AwayTeam'
+  validates :Matchid, :HomeTeam, :AwayTeam, :HomeGoal, :AwayGoal, :match_date_id, :referee_id, presence: true
+  validates :MatchId, :HomeGoal, :AwayGoal, :referee_id, numericality: { only_integer: true }
 end
