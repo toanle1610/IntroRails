@@ -50,12 +50,12 @@ hash_content_match.each do |match|
     refereeId += 1
   end
 
-  new_date = MatchDate.where('Date = ?', DateTime.parse(match['Date']))
+  new_date = MatchDate.where('match_date_id = ?', DateTime.parse(match['Date']))
 
   if new_date.empty?
 
     MatchDate.create(
-      Date: match['Date'],
+      match_date_id: match['Date'],
       Temperature: Faker::Number.between(from: 10, to: 35)
     )
   end
@@ -65,7 +65,7 @@ hash_content_match.each do |match|
     AwayTeam: match['AwayTeam'],
     HomeGoal: match['FTHG'].to_i,
     AwayGoal: match['FTAG'].to_i,
-    Date: match['Date'],
+    match_date_id: match['Date'],
     referee_id: Referee.where('RefereeName = ?', match['Referee']).first.refereeid
   )
   matchId += 1

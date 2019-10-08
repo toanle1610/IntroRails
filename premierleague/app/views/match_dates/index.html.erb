@@ -43,8 +43,9 @@
   <% @matchdates.each do |matchdate| %>
     <% if temp >= i and temp < (i + 12) %>
       <tr>
-        <td><%= matchdate.Date %></td>
+        <td><%= matchdate.match_date_id %></td>
         <td><%= matchdate.Temperature %></td>
+        <td><%= link_to "Show Matches", "/matchdates/#{matchdate.match_date_id}", class: 'btn btn-outline-success' %></td>
       </tr>
     <% end %>
 

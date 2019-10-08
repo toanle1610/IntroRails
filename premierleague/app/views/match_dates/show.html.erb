@@ -1,2 +1,26 @@
-<h1>MatchDates#show</h1>
-<p>Find me in app/views/match_dates/show.html.erb</p>
+<h1>Match Date - <%= @matchdate.match_date_id %></h1>
+
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th>Date</th>
+      <th>Home Team</th>
+      <th>Away Team</th>
+      <th>Home Goal</th>
+      <th>Away Goal</th>
+      <th>Referee</th>
+    </tr>
+  </thead>
+
+  <% @matches.each do |match| %>
+
+    <tr>
+      <td><%= match.match_date_id %></td>
+      <td><%= match.HomeTeam %></td>
+      <td><%= match.AwayTeam %></td>
+      <td><%= match.HomeGoal %></td>
+      <td><%= match.AwayGoal %></td>
+      <td><%= link_to match.referee.RefereeName, referees_show_url(match.referee.refereeid) %></td>
+    </tr>
+  <% end %>
+</table>

@@ -9,7 +9,8 @@ class MatchDatesController < ApplicationController
   end
 
   def show
-    @matchdate = MatchDate.find(params[:matchdateId])
+    @matchdate = MatchDate.find(params[:date])
+    @matches = @matchdate.matches
   end
 
   def new; end

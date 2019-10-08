@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   get '/about', to: 'about#about'
   get '/matchdates', to: 'match_dates#index'
-  get 'match_dates/show'
+  get '/matchdates/:date', to: 'match_dates#show'
   get 'match_dates/new'
   get 'match_dates/edit'
   get '/referees', to: 'referees#index'

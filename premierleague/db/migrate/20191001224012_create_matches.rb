@@ -8,7 +8,7 @@ class CreateMatches < ActiveRecord::Migration[6.0]
       t.string :AwayTeam
       t.integer :HomeGoal
       t.integer :AwayGoal
-      t.datetime :Date
+      t.datetime :match_date_id
       t.integer :referee_id
 
       t.timestamps
